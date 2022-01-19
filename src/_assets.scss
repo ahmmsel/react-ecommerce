@@ -1,0 +1,77 @@
+:root {
+  --primary-bg: #f3f3f3;
+  --primary-color: #40514e;
+  --secondary-color: #f3f3f3;
+  --secondary-bg: #40514e;
+  --box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+}
+
+%primary-btn {
+  padding: .5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: solid .1rem var(--primary-color);
+  text-transform: uppercase;
+  &:hover {
+    background-color: var(--secondary-bg);
+    color: var(--secondary-color);
+  }
+}
+
+%secondary-btn {
+  padding: .5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: var(--secondary-bg);
+  color: var(--secondary-color);
+  border: solid .1rem var(--primary-color);
+  text-transform: uppercase;
+  &:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+  }
+}
+
+%icon-btn {
+  padding: .5rem 1rem;
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
+}
+
+%container {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 60rem;
+}
+
+%section {
+  margin: 4rem auto;
+}
+
+@mixin special-text($color, $size) {
+  font-size: $size;
+  color: $color;
+  font-weight: bold;
+}
+
+@mixin grid($gap, $size) {
+	display: grid;
+  gap: $gap;
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+}
+
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin position($width, $height, $top, $left, $t-x, $t-y) {
+  position: absolute;
+  width: $width; height: $height;
+  top: $top; left: $left;
+  transform: translate($t-x, $t-y);
+}

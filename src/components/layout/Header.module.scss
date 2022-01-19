@@ -1,0 +1,24 @@
+@use "../../_assets.scss" as use;
+
+.header {
+	background-color: var(--primary-bg);
+	box-shadow: var(--box-shadow);
+	position: fixed;
+	top: 0; 
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	.relative-header {	
+		@include use.flex(center, center);
+		height: 8rem;
+		position: relative;	
+		.container {
+			@include use.flex(space-between, center);
+			.logo {
+				h1 {
+					@include use.special-text(var(--primary-color), 2rem);
+				}
+			}
+		}
+	}
+}

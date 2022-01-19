@@ -1,0 +1,19 @@
+@use "../../_assets.scss" as use;
+
+.footer {
+	margin-top: auto;
+	padding: 1rem 0;
+	.container {
+		@include use.flex(space-between, center);
+	}
+}
+
+@media (max-width: 769px) {
+	.footer {
+		.container {
+			@include use.flex(space-between, center);
+			flex-direction: column;
+			border-top: solid .1rem var(--primary-color);
+		}
+	}
+}

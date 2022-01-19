@@ -1,0 +1,11 @@
+@use "../../_assets.scss" as use;
+
+.list {
+	@include use.grid(4rem, 30rem)
+}
+
+@media (max-width: 687px) {
+	.list {
+		@include use.grid(4rem, 15rem)
+	}
+}

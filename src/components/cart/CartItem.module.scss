@@ -1,0 +1,39 @@
+@use "../../_assets.scss" as use;
+
+.cart-item {
+	.card {
+		@include use.flex(flex-start, center);
+		.image {
+			width: 50%;
+		}
+		.content {
+			padding: 1.2rem;
+			.actions {
+				@include use.flex(space-around, center);
+				.increment-btn, .decrement-btn {
+					@extend %icon-btn;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 769px) {
+	.cart-item {
+	.card {
+		@include use.flex(center, center);
+		flex-direction: column;
+		.image {
+			width: 100%;
+		}
+		.content {
+			padding: 1.2rem;
+			.actions {
+				@include use.flex(space-around, center);
+				.increment-btn, .decrement-btn {
+				}
+			}
+		}
+	}
+}
+}

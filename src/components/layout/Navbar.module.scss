@@ -1,0 +1,63 @@
+@use "../../_assets.scss" as use;
+
+.navbar {
+	.menu {
+		display: none;
+		font-size: 2rem;
+		cursor: pointer;
+	}
+	.nav-list {
+		@include use.flex(center, center);
+		li {
+			font-size: 1.5rem;
+			padding: 0 1rem;
+			.cart-quantity {
+				padding: .8rem;
+			}
+			a.active {
+				padding-bottom: .5rem;
+				border-bottom: solid .6rem var(--primary-color);
+			}
+			.logout-btn {
+				@extend %secondary-btn;
+			}
+		}
+	}
+}
+
+@media (max-width: 769px) {
+	.navbar {
+		.menu {
+			display: block;
+		}	
+		.nav-list{
+			@include use.flex(flex-start, flex-start);
+			flex-direction: column;
+		  background-color: var(--secondary-bg);
+		  padding: 1.5rem;
+		  width: 80%;
+		  max-width: 20rem;
+		  height: 100vh;
+		  transition: ease 1s;
+		  opacity: .3;
+		  position: absolute;
+		  top: 100%;
+		  left: -150%;
+		  z-index: 999;
+		  li {
+		  	padding: 1.5rem 0;
+		  	* {
+		  		color: var(--secondary-color);
+		  	}
+	  		a.active {
+	  			border-color: var(--secondary-color);
+	  		}
+		  }
+		}
+		.nav-list.active{
+		  transition: ease .5s;
+		  opacity: .8;
+		  left: 0;
+		}
+	}
+}

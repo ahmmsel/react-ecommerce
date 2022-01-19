@@ -1,0 +1,39 @@
+@use "../_assets.scss" as use;
+
+.showcase {
+	position: relative;
+	background-image: url('../showcase.jpg');
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 70vh;
+	.overlay {
+		@include use.position(100%, 100%, 0, 0, null, null);
+		background-color: rgba(0, 0, 0, 0.5);
+		.content {
+			@include use.position(null, null, 70%, 0, 0, -70%);
+			background-color: var(--primary-bg);
+			box-shadow: var(--box-shadow);
+			padding: 1.5rem;
+			font-size: 1.5rem;
+			* {
+				text-transform: uppercase;
+			}
+  	}
+	}
+}
+
+@media (max-width: 769px) {
+ .showcase {
+	.overlay {
+		.content {
+			background-color: transparent;
+			box-shadow: none;
+			*{
+				color: var(--secondary-color);
+			}
+  	}
+	}
+ }
+}

@@ -1,0 +1,43 @@
+@use "../../_assets.scss" as use;
+
+.product-item {
+	@include use.flex(space-between, center);
+	box-shadow: var(--box-shadow);
+	margin: 4rem 0;
+	.content {
+		padding: 1rem;
+		.actions {
+			@include use.flex(center, center);
+			padding: 1rem 0;
+			.add-cart {
+				@extend %primary-btn;
+				width: 50%;
+				height: 6rem;
+			}
+			.more-details {
+				@extend %secondary-btn;
+				width: 50%;
+				height: 6rem;
+			}
+		}
+	}
+	.image {
+		object-fit: cover;
+		width: 50%;
+		height: 20rem;
+	}
+}
+
+.product-item:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+@media (max-width: 769px) {
+	.product-item, .product-item:nth-child(even) {
+		@include use.flex(center, center);
+		flex-direction: column-reverse;
+		.image {
+			width: 100%;
+		}
+	}
+}
