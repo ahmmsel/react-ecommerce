@@ -34,6 +34,20 @@
   }
 }
 
+@mixin outline-btn($bg, $color, $border, $hover-bg, $hover-color) {
+  padding: .5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: $bg;
+  color: $color;
+  border: solid .1rem $border;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $hover-bg;
+    color: $hover-color;
+  }
+}
+
 %icon-btn {
   padding: .5rem 1rem;
   font-size: 2rem;

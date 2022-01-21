@@ -7,6 +7,7 @@ const cartSlice = createSlice({
 		addToCart(state, action) {
 			const newItem = action.payload;
 			const isExisting = state.cartData.find(item => item.id === newItem.id);
+			
 			state.totalAmount++;
 			if (!isExisting) {
 				state.cartData.push({

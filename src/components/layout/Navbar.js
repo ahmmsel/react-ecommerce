@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { logout } from "../../store/auth-slice"
 import style from "./Navbar.module.scss"
@@ -25,19 +25,20 @@ export default function Navbar() {
 				<li>
 					<NavLink activeClassName={style.active} to="/" exact>Home</NavLink>
 				</li>
-				{isAuth && 
-					<li>
-						<NavLink activeClassName={style.active} to="/my-cart">
-							My Cart
-							<sup className={style["cart-quantity"]}>{totalAmount}</sup>
-						</NavLink>
-					</li>
-				}
 				<li>
 					{isAuth ? <Button className={style["logout-btn"]} onClick={logoutHandler}>logout</Button> : 
 					<NavLink activeClassName={style.active} to="/login">Login</NavLink>}
 				</li>
 			</ul>
+			{isAuth && 
+			<Link className={style["my-cart"]} to="/my-cart">
+				<span className={`${style["cart-icon"]} bi bi-cart`}>
+					<span className={style["cart-quantity"]}>
+						{totalAmount}
+					</span>
+				</span>
+			</Link>
+			}
 		</nav>
 	)
 }

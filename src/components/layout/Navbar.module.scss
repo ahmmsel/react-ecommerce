@@ -1,6 +1,20 @@
 @use "../../_assets.scss" as use;
 
 .navbar {
+	@include use.flex(center, center);
+	flex-direction: row;
+	.my-cart {
+		font-size: 1.8rem;
+		padding: 0 2rem;
+		.cart-icon {
+			position: relative;
+			.cart-quantity {
+				position: absolute;
+				top: -1rem;
+				font-size: 1.2rem;
+			}
+		}
+	}
 	.menu {
 		display: none;
 		font-size: 2rem;
@@ -19,7 +33,7 @@
 				border-bottom: solid .6rem var(--primary-color);
 			}
 			.logout-btn {
-				@extend %secondary-btn;
+				@include use.outline-btn(var(--secondary-bg), var(--secondary-color), var(--primary-color), transparent, var(--primary-color));
 			}
 		}
 	}
@@ -27,6 +41,7 @@
 
 @media (max-width: 769px) {
 	.navbar {
+		flex-direction: row-reverse;
 		.menu {
 			display: block;
 		}	
@@ -52,6 +67,9 @@
 	  		a.active {
 	  			border-color: var(--secondary-color);
 	  		}
+	  		.logout-btn {
+					@include use.outline-btn(transparent, var(--secondary-color), var(--secondary-color), null, var(--secondary-color));
+				}
 		  }
 		}
 		.nav-list.active{
