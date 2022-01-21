@@ -3,7 +3,6 @@ import { useHistory, Link } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { addToCart } from "../../store/cart-slice"
 import style from "./ProductItem.module.scss"
-import Container from "../UI/Container"
 import Button from "../UI/Button"
 
 export default function ProductItem({id, title, price, image}) {

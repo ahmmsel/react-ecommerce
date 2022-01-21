@@ -17,7 +17,7 @@ export default function Auth() {
 
 	const loginHandler = (e) => {
 		e.preventDefault();
-		if (enteredEmail.trim().length === 0 || enteredPassword.trim().length == 0) {
+		if (enteredEmail.trim().length === 0 || enteredPassword.trim().length === 0) {
 			return;
 		} else {
 			dispatch(login());

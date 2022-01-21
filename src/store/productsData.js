@@ -1,5 +1,3 @@
-const price = Math.random() * 10;
-
 const productsData = [
 	{
 		id: "p1",
