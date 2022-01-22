@@ -12,7 +12,7 @@ export default function Header() {
 					<div className={style.logo}>
 						<h1>
 							<Link to="/">
-								react
+								e-commerce
 							</Link>
 						</h1>
 					</div>

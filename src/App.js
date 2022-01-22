@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react'
 import { Switch, Route } from "react-router-dom"
 import { useSelector } from "react-redux"
 import Layout from "./components/layout/Layout"
+import Loading from "./components/UI/Loading"
 
 const Home = lazy(_ => import("./pages/Home"));
 const MyCart = lazy(_ => import("./pages/MyCart"));
@@ -14,7 +15,7 @@ export default function App() {
 
 	return (
 		<Layout>
-			<Suspense fallback={<p>Loading...</p>}>	
+			<Suspense fallback={<Loading />}>	
 				<Switch>
 					<Route path="/" exact> 
 						<Home />

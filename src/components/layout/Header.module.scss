@@ -1,13 +1,16 @@
 @use "../../_assets.scss" as use;
 
 .header {
-	background-color: var(--primary-bg);
+	background-color: var(--secondary-bg);
 	box-shadow: var(--box-shadow);
 	position: fixed;
 	top: 0; 
 	left: 0;
 	right: 0;
 	z-index: 9999;
+	* {
+		color: var(--secondary-color);
+	}
 	.relative-header {	
 		@include use.flex(center, center);
 		height: 8rem;
@@ -16,7 +19,7 @@
 			@include use.flex(space-between, center);
 			.logo {
 				h1 {
-					@include use.special-text(var(--primary-color), 2rem);
+					@include use.special-text(var(--primary-color), 1.5rem);
 				}
 			}
 		}

@@ -30,10 +30,10 @@
 			}
 			a.active {
 				padding-bottom: .5rem;
-				border-bottom: solid .6rem var(--primary-color);
+				border-bottom: solid .6rem var(--secondary-color);
 			}
 			.logout-btn {
-				@include use.outline-btn(var(--secondary-bg), var(--secondary-color), var(--primary-color), transparent, var(--primary-color));
+				@include use.outline-btn(transparent, var(--secondary-color), var(--secondary-color), null, var(--secondary-color));
 			}
 		}
 	}

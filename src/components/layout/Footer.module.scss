@@ -1,19 +1,34 @@
 @use "../../_assets.scss" as use;
 
 .footer {
+	background-color: var(--secondary-bg);
 	margin-top: auto;
 	padding: 1rem 0;
 	.container {
 		@include use.flex(space-between, center);
+		.special-text {
+			@include use.special-text(var(--secondary-color), 1.5rem);
+		}
+		* {
+			color: var(--secondary-color);
+		}
+		.icons {
+			@include use.flex(center, center);
+			li {
+				padding: 0 1rem;
+			}
+		}
 	}
 }
 
 @media (max-width: 769px) {
 	.footer {
 		.container {
-			@include use.flex(space-between, center);
+			@include use.flex(center, center);
 			flex-direction: column;
-			border-top: solid .1rem var(--primary-color);
+			.icons {
+				margin: 1rem 0;
+			}
 		}
 	}
 }

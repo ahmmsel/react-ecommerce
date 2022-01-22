@@ -6,25 +6,26 @@
 	margin: 4rem 0;
 	.content {
 		padding: 1rem;
+		.info {
+			.description {
+				padding: 1.5rem 0;
+			}
+		}
 		.actions {
-			@include use.flex(center, center);
+			@include use.flex(flex-start, center);
 			padding: 1rem 0;
 			.add-cart {
 				@extend %primary-btn;
-				width: 50%;
-				height: 6rem;
 			}
 			.more-details {
 				@extend %secondary-btn;
-				width: 50%;
-				height: 6rem;
 			}
 		}
 	}
 	.image {
 		object-fit: cover;
-		width: 50%;
-		height: 20rem;
+		width: 100%;
+		height: 25rem;
 	}
 }
 

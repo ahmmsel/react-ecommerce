@@ -26,7 +26,7 @@ export default function ProductDetailsItem({id, title, price, image, description
 				<div className={style.info}>
 					<h1>{title}</h1>
 					<h2>${price}</h2>
-					<p>{description}</p>
+					<p className={style.description}>{description}</p>
 				</div>
 				<div className={style.actions}>
 					<Button className={style["add-cart"]} onClick={addToCartHandler}>add to cart</Button>

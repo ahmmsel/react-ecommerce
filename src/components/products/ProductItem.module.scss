@@ -11,13 +11,9 @@
 			padding: 1rem 0;
 			.add-cart {
 				@extend %primary-btn;
-				width: 50%;
-				height: 6rem;
 			}
 			.more-details {
 				@extend %secondary-btn;
-				width: 50%;
-				height: 6rem;
 			}
 		}
 	}
